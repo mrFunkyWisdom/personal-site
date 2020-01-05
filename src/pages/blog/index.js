@@ -37,7 +37,7 @@ const BlogPage = () => {
           <a href="https://www.instagram.com/ensar.bavrk/">Instagram</a>
         </div>
       </div>
-        <p style={{ marginTop: 35}}>There is no posts on the blog yet 🤭 </p>
+      <p style={{ marginTop: 35}}>There is no posts on the blog yet <span className={'emojis'} role="img" aria-label="Face With Hand Over Mouth">🤭</span> </p>
     </Layout>
   )
 }
