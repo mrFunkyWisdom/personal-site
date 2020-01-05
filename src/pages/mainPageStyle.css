@@ -1,0 +1,70 @@
+.external-link:link {
+    text-decoration: none;
+}
+
+.external-link:hover {
+    color: #23E5A5;
+}
+
+.external-link:visited {
+    color: #00A7DC;
+}
+
+.social-icon:hover {
+    fill: #23E5A5;
+}
+
+.ensarLogo{
+    width: 200px;
+}
+
+.emojis{
+    font-size: 24px;
+}
+
+.section-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 2;
+}
+
+.blog-button{
+    min-width: 120px;
+    max-width: 320px;
+    border-radius: 15px;
+    background-color: #00A7DC;
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+    font-family: -apple-system, 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.blog-button:hover{
+    background-color: #23E5A5;
+    color: #000;
+}
+
+@media only screen and (max-width: 540px) {
+    .emojis{
+        font-size: 18px;
+    }
+
+    .main-container{
+        padding: 20px
+    }
+
+}
+
+@media only screen and (max-width: 430px) {
+    .ensarLogo{
+        width: 130px;
+    }
+    .main-container{
+        padding: 20px 20px 40px;
+    }
+}

@@ -1,0 +1,32 @@
+.navigation-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.navigation-container a {
+    text-decoration: none;
+}
+
+.navigation-container a:not(:first-child) {
+    padding-left: 55px;
+}
+
+.navigation-container a:link {
+    text-decoration: none;
+}
+
+.navigation-container a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navigation-container a:hover {
+    color: #23E5A5;
+}
+
+@media only screen and (max-width: 430px) {
+    .navigation-container a:not(:first-child) {
+        padding-left: 25px;
+    }
+}
