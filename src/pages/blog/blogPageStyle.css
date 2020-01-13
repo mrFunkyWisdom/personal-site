@@ -1,3 +1,8 @@
+a, p {
+    text-decoration: none;
+    color: white;
+}
+
 .navigation-container {
     display: flex;
     flex-direction: row;

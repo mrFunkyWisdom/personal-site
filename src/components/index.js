@@ -1,0 +1,1 @@
+export { PersonalImage } from './personalImage';

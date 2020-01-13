@@ -1,0 +1,98 @@
+---
+title: Java Optional type with JavaScript
+date: 2019-02-01
+featuredImage: ../../images/blogImages/java8.jpg
+published: true
+tags: [javascript, FP]
+---
+
+While I was writing a lot of Java I fell in love with the Optional type, Optional is the type which comes from amazing
+library guava, also now it’s included in the Java standard library itself. If you are not familiar with optional,
+simply said, Optional will encapsulate the type checking and guards against missing values for us.
+In this short article, I will try to show how to create a similar type with JavaScript.
+First,  we will need to create a new wrapper type which will when instantiated contain either value or a null/undefined.
+Therefore, it is going to be possible to manipulate missing values as if they were normal objects without necessarily
+having to perform a null or undefined check at every step.
+
+```javascript
+class OptionalType {
+    constructor (value){
+        this.value = value
+    }
+    get() {
+     return this.value
+    }
+    getOrElse(orElse) {
+        const elseVal = orElse instanceof Function ?
+            orElse() :
+            orElse
+        return this.isDefined() ? this.value : elseVal;
+    }
+    map(mapFn) {
+        return this.isDefined() ?
+            new of(mapFn(this.value)) :
+            empty();
+
+    }
+    flatMap(mapFn) {
+       return this.isDefined() ? mapFn(this.value) : empty()
+    }
+    isDefined () {
+       return (this.value !== undefined);
+    }
+}
+```
+
+Intentionally I left some methods that come from original Java Optional type since probably map, flatMap,
+and getOrElse are the ones that you will use for the most of the times while interacting with the Optional.
+And now we only need a proper interface for instantiating Optional objects, and for that,
+we will create two functions of, and empty and put them inside an Optional object.
+
+
+```javascript
+const empty = () =>
+  new OptionalType()
+
+const of = value =>
+  (value === undefined || value === null) ?
+      new empty() :
+      new OptionalType(value)
+const Optional = {
+    of,
+    empty
+}
+export default Optional;
+```
+
+Then we only export that single Optional object from this file and that is all
+for our simple and small implementation of this very powerful type.
+
+How this is useful to us?
+
+Let’s see in the example below
+
+```javascript
+const toUpper = str => str.toUpperCase()
+const textScraper = elem =>
+    Optional
+        .of(elem.match(/<p>([\s\S]*)?<\/p>/i))
+        .map(match => match[1])
+const someValuee = textScraper('<p>some text</p>')
+    .map(text => text.trim())
+    .map(str => str + " here")
+    .flatMap(str => new Optional.of(toUpper(str)))
+    .map(toUpper)
+    .getOrElse(() => 'there is no text to scrape')
+console.log(someValuee)
+```
+
+we created a function textScraper, a function will take an HTML paragraph as a string and it will get the text from it,
+and the result of the string.match we wrapped inside an Optional and we mapped to take a second element of the match
+function because we are only interested in the text part the paragraph, after that when we consumed textScraper
+function we did more formatting and if the supplied HTML element is not a p tag or for whatever reason operation
+fails we will get a default text instead of failing.
+
+If you like an Idea of the Optional type I highly recommend to look at this cool
+package https://www.npmjs.com/package/optional-js
+Or if you are more leaning on the FP side I will recommend an amazing collection of ADTs for JS, the evil soft crocks,
+it includes the maybe type which can be used as same as java’s Optional type :)
