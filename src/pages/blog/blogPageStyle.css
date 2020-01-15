@@ -5,33 +5,108 @@ a, p {
 
 .navigation-container {
     display: flex;
-    flex-direction: row;
-    margin-top: 20px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 80px;
 }
 
-.navigation-container a {
+.navigation-link-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.navigation-link-container a {
     text-decoration: none;
 }
 
-.navigation-container a:not(:first-child) {
+.navigation-link-container a:not(:first-child) {
     padding-left: 55px;
 }
 
-.navigation-container a:link {
+.navigation-link-container a:link {
     text-decoration: none;
 }
 
-.navigation-container a:visited {
+.navigation-link-container a:visited {
     text-decoration: none;
     color: white;
 }
 
-.navigation-container a:hover {
+.navigation-link-container a:hover {
     color: #23E5A5;
 }
 
+.article-preview-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+}
+
+.article-preview-img-container{
+    min-width: 320px;
+    height: auto;
+}
+
+.article-preview-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 25px;
+}
+
+.article-preview-tags-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.article-preview-tag {
+    margin: 0 5px 5px 0;
+    font-size: 14px;
+    color: #bfbfbf;
+}
+
+.navigation-separator {
+    background-color: hsla(0, 100%, 100%, 0.7);
+    width: 70%;
+    margin-top: 60px;
+}
+
+.article-preview-date {
+    margin: 0;
+    font-size: 14px;
+    color: #bfbfbf;
+}
+
+@media only screen and (max-width: 880px) {
+    .article-preview-container {
+        flex-direction: column;
+    }
+    .article-preview-img-container {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .article-preview-text-container {
+        margin: 15px 0 0 0;
+    }
+
+    .navigation-separator {
+        width: 90%;
+    }
+}
+
 @media only screen and (max-width: 430px) {
-    .navigation-container a:not(:first-child) {
+    .navigation-link-container a:not(:first-child) {
         padding-left: 25px;
+    }
+
+    .article-preview-tag{
+        font-size: 12px;
+    }
+    .article-preview-date {
+        font-size: 12px;
     }
 }
