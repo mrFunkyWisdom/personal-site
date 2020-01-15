@@ -1,13 +1,13 @@
 import React from "react"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import { Footer} from "../../components"
-import { BlogHeader } from "./blogHeader"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { Footer} from "../components"
+import { BlogHeader } from "../components/blogHeader"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import './blogPageStyle.css';
-import { BlogPreviewArticle } from "./blogPreviewArticle"
+import { BlogPreviewArticle } from "../components/blogPreviewArticle"
 
-export const BlogPage = () => {
+const Blog = () => {
   const {allMdx: { articles }} = useStaticQuery(graphql`{
         allMdx(
             sort: { fields: [frontmatter___date], order: DESC }
@@ -57,3 +57,5 @@ export const BlogPage = () => {
     </Layout>
   )
 }
+
+export default Blog;

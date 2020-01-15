@@ -1,7 +1,7 @@
 import React from "react"
-import { PersonalImage } from "../../components"
+import { PersonalImage } from "./index"
 import { Link } from "gatsby"
-import './blogPageStyle.css';
+import '../pages/blogPageStyle.css';
 
 export const BlogHeader = ({ onArticle }) => {
   return (

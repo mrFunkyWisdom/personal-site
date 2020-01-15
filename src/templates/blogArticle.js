@@ -1,12 +1,12 @@
 import React from "react"
-import Layout from "./layout"
-import SEO from "./seo"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Footer } from "./index"
-import { BlogHeader } from "../pages/blog/blogHeader"
+import { Footer } from "../components"
+import { BlogHeader } from "../components/blogHeader"
 import { graphql, Link, } from "gatsby"
-import './layout.css';
+import '../components/layout.css';
 
 const BlogArticle = (props) => {
   const { frontmatter: data, body} = props.data.mdx
@@ -32,6 +32,7 @@ const BlogArticle = (props) => {
         </div>
         }
         <MDXRenderer>{body}</MDXRenderer>
+        <Link to="/blog" style={{ color: '#00A7DC'}} >Read more</Link>
       </div>
     </Layout>
   )

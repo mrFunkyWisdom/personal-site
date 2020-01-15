@@ -8,7 +8,7 @@ import EnsarBavrkLogo from "../images/Ensar.svg";
 import SEO from "../components/seo"
 import './homePageStyle.css'
 
-export const HomePage = () => (
+const Home = () => (
   <Layout style={{
     display: 'flex',
     flex:1,
@@ -42,3 +42,5 @@ export const HomePage = () => (
     </div>
   </Layout>
 )
+
+export default Home

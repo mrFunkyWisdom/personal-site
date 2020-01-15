@@ -3,7 +3,7 @@ const path = require('path');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  const blogArticle = path.resolve('src/components/blogArticle.js');
+  const blogArticle = path.resolve('src/templates/blogArticle.js');
   return graphql(`{
        allMdx(
             sort: { fields: [frontmatter___date], order: DESC }

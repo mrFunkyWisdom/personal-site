@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import './blogPageStyle.css';
+import '../pages/blogPageStyle.css';
 
 export const BlogPreviewArticle = ({title, featuredImage, date, tags, slug, excerpt }) => {
   return (

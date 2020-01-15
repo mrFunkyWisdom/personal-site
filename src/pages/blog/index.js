@@ -1,1 +1,0 @@
-export { BlogPage as default } from './blogPage'
