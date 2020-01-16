@@ -12,7 +12,7 @@ const BlogArticle = (props) => {
   const { frontmatter: data, body} = props.data.mdx
   console.log('DATA ',data);
   return (
-    <Layout style={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}} Footer={Footer}>
+    <Layout style={{display: 'flex', flexDirection: 'column', minHeight: '100vh', alignItems: 'center'}} Footer={Footer}>
       <SEO title={data.title} />
       <BlogHeader onArticle />
       <div style={{ display: 'flex', flex: 1, flexDirection: 'column'}}>
@@ -32,7 +32,7 @@ const BlogArticle = (props) => {
         </div>
         }
         <MDXRenderer>{body}</MDXRenderer>
-        <Link to="/blog" style={{ color: '#00A7DC'}} >Read more</Link>
+        <Link to="/blog" style={{ color: '#00A7DC'}} >Back to blog</Link>
       </div>
     </Layout>
   )

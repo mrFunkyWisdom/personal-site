@@ -626,7 +626,10 @@ a {
 
 
 .main-container{
-  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 1024px;
 }
 
 
@@ -634,6 +637,8 @@ a {
   display: flex;
   flex: 1;
   align-items: flex-end;
+  padding-top: 20px;
+  width: 100%;
 }
 
 .article-img-container{
@@ -656,6 +661,9 @@ a {
 }
 
 @media only screen and (max-width: 880px) {
+  .main-container {
+    width: 80%;
+  }
   .article-img-container {
     min-width: auto;
     width: 100%;
@@ -681,10 +689,10 @@ a {
 
 @media only screen and (max-width: 430px) {
   html {
-    font-size: 70%;
+    font-size: 90%;
   }
   .main-container{
-    padding: 20px 20px 40px;
+    width: 95%;
   }
   .navigation-link-container a:not(:first-child) {
     padding-left: 25px;

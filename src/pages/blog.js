@@ -40,7 +40,10 @@ const Blog = () => {
   `);
 
   return(
-    <Layout style={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}} Footer={Footer}>
+    <Layout
+      mainClassName={'blog-main-container'}
+      style={{display: 'flex', flexDirection: 'column', minHeight: '100vh', alignItems: 'center'}}
+      Footer={Footer}>
       <SEO title="Blog" />
       <BlogHeader />
       { articles.map(data => (

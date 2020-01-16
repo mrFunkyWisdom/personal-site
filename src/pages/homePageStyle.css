@@ -16,6 +16,7 @@
 
 .ensarLogo{
     width: 200px;
+    margin-top: 80px;
 }
 
 .emojis{
@@ -27,7 +28,10 @@
     flex: 1;
     flex-direction: column;
     justify-content: flex-end;
-    z-index: 2;
+}
+
+.section-container:nth-of-type(2){
+    margin-bottom: 20px;
 }
 
 .blog-button{
@@ -50,12 +54,26 @@
 }
 
 @media only screen and (max-width: 540px) {
+    .ensarLogo{
+        margin: 0 0 40px 0;
+    }
     .emojis{
         font-size: 18px;
     }
 
     .main-container{
-        padding: 20px
+        padding: 20px;
+    }
+
+    .section-container h4 {
+        line-height: 1.5rem;
+    }
+    .section-container {
+        flex: 3;
+    }
+    .section-container:nth-of-type(2){
+        flex: 2;
+        margin-bottom: 0;
     }
 
 }

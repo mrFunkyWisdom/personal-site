@@ -80,6 +80,13 @@ a, p {
     color: #bfbfbf;
 }
 
+.blog-main-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1024px;
+    padding: 40px;
+}
+
 @media only screen and (max-width: 880px) {
     .article-preview-container {
         flex-direction: column;
@@ -108,5 +115,9 @@ a, p {
     }
     .article-preview-date {
         font-size: 12px;
+    }
+
+    .blog-main-container{
+        padding: 40px 20px;
     }
 }

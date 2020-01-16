@@ -10,8 +10,8 @@ export const BlogHeader = ({ onArticle }) => {
       <div className={'navigation-link-container'}>
         { onArticle ? <Link to="/blog" >Back to blog</Link> : <Link to="/" >Home</Link>}
         {/*<a href={'#'}>Speaking</a>*/}
-        <a href="https://twitter.com/EnsarBavrk/">Twitter</a>
-        <a href="https://www.instagram.com/ensar.bavrk/">Instagram</a>
+        <a target="_blank" href="https://twitter.com/EnsarBavrk/">Twitter</a>
+        <a target="_blank" href="https://www.instagram.com/ensar.bavrk/">Instagram</a>
       </div>
       <hr className={'navigation-separator'}/>
     </div>
