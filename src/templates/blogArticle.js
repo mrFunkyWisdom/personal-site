@@ -1,16 +1,12 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Footer } from "../components"
-import { BlogHeader } from "../components/blogHeader"
-import { graphql, Link, } from "gatsby"
+import { graphql, Link } from "gatsby"
+import { BlogHeader, SEO, Footer, Layout } from "../components"
 import '../components/layout.css';
 
 const BlogArticle = (props) => {
   const { frontmatter: data, body} = props.data.mdx
-  console.log('DATA ',data);
   return (
     <Layout style={{display: 'flex', flexDirection: 'column', minHeight: '100vh', alignItems: 'center'}} Footer={Footer}>
       <SEO title={data.title} />

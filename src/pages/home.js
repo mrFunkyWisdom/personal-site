@@ -1,11 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
 import TwitterIcon from "../images/twitter.svg";
 import InstagramIcon from "../images/instagram.svg";
 import EnsarBavrkLogo from "../images/Ensar.svg";
-import SEO from "../components/seo"
+import { SEO, Layout } from "../components"
+import { Link } from "gatsby"
 import './homePageStyle.css'
 
 const Home = () => (
@@ -22,7 +20,7 @@ const Home = () => (
     <div className={'section-container'}>
         <h1>Hey, thanks for visiting!</h1>
         <h4>I do product development at <span style={{color: '#23E5A5'}}>codecentric labs</span>,
-          I'm a storyteller with a passion for #stlartups
+          I'm a storyteller with a passion for #startups
           <a target="_blank" className={'external-link'} href="https://www.indiehackers.com/mrFunkyWisdom"> #indiehackers </a>
           #uxui #agileteams, all day shoeless building things.
           <span role="img" aria-label="rock on" className={'emojis'}>🤘🏻</span> <span role="img" aria-label="sun" className={'emojis'} style={{ color: 'yellow'}}>☀</span></h4>

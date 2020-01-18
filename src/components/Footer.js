@@ -1,6 +1,6 @@
 import React from "react";
-import './layout.css';
 import EnsarBavrkLogo from "../images/Ensar.svg";
+import './layout.css';
 
 export const Footer = () => {
   return (

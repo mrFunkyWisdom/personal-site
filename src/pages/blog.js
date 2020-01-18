@@ -1,11 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { Footer} from "../components"
-import { BlogHeader } from "../components/blogHeader"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { Footer, BlogPreviewArticle, BlogHeader, SEO, Layout } from "../components"
 import './blogPageStyle.css';
-import { BlogPreviewArticle } from "../components/blogPreviewArticle"
 
 const Blog = () => {
   const {allMdx: { articles }} = useStaticQuery(graphql`{
